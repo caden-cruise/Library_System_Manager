@@ -2,26 +2,26 @@ package library.inventory;
 
 /**
  * Enum is a special "class" that represents a group of constants 
- * Only two valid Genders are FEMALE and MALE
+ * Only three valid InventoryStatuses are CIRCULATING, REFRENCE, and RESERVE
  * 
- * @author Debbie Johnson
+ * @author Caden Cruise
  * @version 1.0
- * @since 2021.02.16
+ * @since 2021.03.23
  *
  */
 public enum InventoryStatus {
 	/**
-	 * InventoryStatus for female animals.
+	 * InventoryStatus for circulating inventory.
 	 */
-	FEMALE,
+	CIRCULATING,
 	
 	/**
-	 * InventoryStatus for male animals.
+	 * InventoryStatus for reference inventory.
 	 */
-	MALE,
+	REFRENCE,
 	
 	/**
-	 * InventoryStatus for undefined animals.
+	 * InventoryStatus for reserved inventory.
 	 */
-	OTHER
+	RESERVE
 }

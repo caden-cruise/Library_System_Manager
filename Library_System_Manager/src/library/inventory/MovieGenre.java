@@ -2,26 +2,32 @@ package library.inventory;
 
 /**
  * Enum is a special "class" that represents a group of constants 
- * Only two valid BookGenre types are FRESH and SALT
+ * Only four valid MovieGenre types are ACTION, ADVENTURE, COMEDY,
+ * OTHER.
  * 
- * @author Debbie Johnson
+ * @author Caden Cruise
  * @version 1.0
- * @since 2021.02.16
+ * @since 2021.03.23
  *
  */
 public enum MovieGenre {
 	/**
-	 * BookGenre type for fresh water fish.
+	 * MovieGenre type for action movies.
 	 */
-	FRESH,
+	ACTION,
 	
 	/**
-	 * BookGenre type for salt water fish.
+	 * MovieGenre type for adventure movies.
 	 */
-	SALT,
+	ADVENTURE,
 	
 	/**
-	 * BookGenre type for both fresh and salt water fish.
+	 * MovieGenre type for comedy movies.
 	 */
-	BOTH
+	COMEDY,
+	
+	/**
+	 * MovieGenre type for all other movies.
+	 */
+	OTHER
 }

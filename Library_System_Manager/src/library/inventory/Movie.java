@@ -8,7 +8,7 @@ public class Movie extends Inventory {
 
 	protected final String type = "Book";
 	
-	protected MovieGenre waterType;
+	protected MovieGenre movieType;
 	
 	// default constructor
 	public Movie(){
@@ -28,7 +28,7 @@ public class Movie extends Inventory {
 	 */
 	public Movie(int age, InventoryStatus inventoryStatus, double weight) {
 		super(age, inventoryStatus, weight);
-		this.waterType = null;
+		this.movieType = null;
 	}
 	
 	/**
@@ -42,29 +42,31 @@ public class Movie extends Inventory {
 	}
 	
 	/**
-	 * Get the fish's BookGenre type (enum: FRESH or SALT).
-	 * We do not need to validate BookGenre type because we are using an enum
+	 * Get the movie's MovieGenre type (enum: ACTION, ADVENTURE, 
+	 * COMEDY, or OTHER).
+	 * We do not need to validate MovieGenre type because we are using an enum
 	 * 
-	 * @return The fish's BookGenre type.
+	 * @return The movie's MovieGenre type.
 	 */
-	public MovieGenre getWaterType() {
-		return this.waterType;
+	public MovieGenre getMovieType() {
+		return this.movieType;
 	}
 
 	/**
-	 * Set the fish's water type.
+	 * Set the movie's genre type.
 	 * 
-	 * @param waterType The fish BookGenre type (enum: FRESH or SALT).
+	 * @param movieType The movie MovieGenre type (enum: ACTION, ADVENTURE, 
+	 * COMEDY, or RESERVE).
 	 */
-	public void setWaterType(MovieGenre waterType) {
-		this.waterType = waterType;
+	public void setMovieType(MovieGenre movieType) {
+		this.movieType = movieType;
 	}	
 
 	/**
-	 * All fish can swim (behavior).
+	 * All movies can be sold (action).
 	 */
-	public void swim() {
-		System.out.println(this.type + " is swimming...");
+	public void sold() {
+		System.out.println(this.type + " is sold...");
 	}
 	
 }

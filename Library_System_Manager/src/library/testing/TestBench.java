@@ -23,7 +23,7 @@ public class TestBench {
 		TestBench.displayInfo(inventory);
 		
 		inventory.setAge(1);
-		inventory.setGender(InventoryStatus.FEMALE);
+		inventory.setGender(InventoryStatus.CIRCULATING);
 		inventory.setWeight(5.5);
 		displayInfo(inventory);	
 		
@@ -38,7 +38,7 @@ public class TestBench {
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 		
-		Inventory inventory = new Inventory(10, InventoryStatus.FEMALE, 100.0);
+		Inventory inventory = new Inventory(10, InventoryStatus.CIRCULATING, 100.0);
 		zooAnimals.add(inventory);
 		displayInfo(inventory);
 
@@ -58,7 +58,7 @@ public class TestBench {
 		displayInfo(movie);
 		
 		movie.setAge(1);
-		movie.setGender(InventoryStatus.MALE);
+		movie.setGender(InventoryStatus.REFRENCE);
 		movie.setWeight(0.5);
 		displayInfo(movie);
 		
@@ -77,13 +77,13 @@ public class TestBench {
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 		
-		Book book = new Book(2, InventoryStatus.MALE, 10.5);
+		Book book = new Book(2, InventoryStatus.REFRENCE, 10.5);
 		zooAnimals.add(book);
 		displayInfo(book);
 		
 		book.eat();
 		book.sleep();
-		book.swim();
+		book.available();
 		
 		System.out.println();
 		System.out.println("End of " + Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -96,17 +96,17 @@ public class TestBench {
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 		
-		Movie movie = new Movie(-2, InventoryStatus.MALE, -10.5);	
+		Movie movie = new Movie(-2, InventoryStatus.REFRENCE, -10.5);	
 		TestBench.displayInfo(movie);
 		
 //		movie.setWingspan(-1);
 //		System.out.println("The bird's wingspan is " + movie.getWingspan());
 //		System.out.println();
 		
-		Book book = new Book(-2, InventoryStatus.FEMALE, -10.5);	
+		Book book = new Book(-2, InventoryStatus.CIRCULATING, -10.5);	
 		TestBench.displayInfo(book);
-		book.setWaterType(BookGenre.SALT);
-		System.out.println("The fish is a " + book.getWaterType() + " water fish");
+		book.setBookType(BookGenre.NONFICTION);
+		System.out.println("The fish is a " + book.getBookType() + " water fish");
 
 		System.out.println();
 		System.out.println("End of " + Thread.currentThread().getStackTrace()[1].getMethodName());
