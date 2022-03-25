@@ -122,7 +122,7 @@ public class TestBench {
 		System.out.println("=== ========== ========== === ========");
 		
 		for (Inventory inventory : libraryInventory) {
-			System.out.printf("%-3d %-10s %-10s %3d %8.2f\n",
+			System.out.printf("%-3d %-10s %-10s %10s %8.2f\n",
 					inventory.getId(), inventory.getType(), inventory.getInventoryStatus(), inventory.getLocation(), inventory.getValue());
 		}
 		
