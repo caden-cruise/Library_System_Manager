@@ -9,25 +9,28 @@ public class Movie extends Inventory {
 	protected final String type = "Book";
 	
 	protected MovieGenre movieType;
+	protected String director;
+	protected String title;
+	
 	
 	// default constructor
 	public Movie(){
-		/* Default age in years is 0.
+		/* Default location is null.
 		 * Default inventoryStatus is null.
-		 * Default weight in pounds is 0.0.
+		 * Default value in dollars is 0.00.
 		 */
-		this(0, null, 0.0); // age, inventoryStatus, weight
+		this(null, null, 0.00); // age, inventoryStatus, value
 	}
 	
 	/**
 	 * Overload constructor that allows setting the object's default fields (attributes).
 	 * 
-	 * @param age Default age in years is 0.
+	 * @param location Default location is null.
 	 * @param inventoryStatus Default inventoryStatus is null.
-	 * @param weight Default weight in pounds is 0.0.
+	 * @param value Default value in pounds is 0.00.
 	 */
-	public Movie(int age, InventoryStatus inventoryStatus, double weight) {
-		super(age, inventoryStatus, weight);
+	public Movie(String location, InventoryStatus inventoryStatus, double value) {
+		super(location, inventoryStatus, value);
 		this.movieType = null;
 	}
 	
@@ -61,12 +64,41 @@ public class Movie extends Inventory {
 	public void setMovieType(MovieGenre movieType) {
 		this.movieType = movieType;
 	}	
+	
+	/**
+	 * Get's the movie's director name
+	 * 
+	 * @return The director of the movie
+	 */
+	public String getDirector() {
+		return director;
+	}
 
 	/**
-	 * All movies can be sold (action).
+	 * Sets the movie's director name
+	 * 
+	 * @param director The director of the movie
 	 */
-	public void sold() {
-		System.out.println(this.type + " is sold...");
+	public void setDirector(String director) {
+		this.director = director;
+	}
+
+	/**
+	 * Gets the movie title
+	 * 
+	 * @return The title of the movie 
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * Sets the movie title 
+	 * 
+	 * @param title The title of the movie
+	 */
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	
 }

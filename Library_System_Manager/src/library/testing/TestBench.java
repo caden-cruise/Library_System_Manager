@@ -7,7 +7,7 @@ import library.inventory.*;
 
 public class TestBench {
 	
-	private static List<Inventory> zooAnimals = new ArrayList<>();
+	private static List<Inventory> libraryInventory = new ArrayList<>();
 	
 	TestBench(){
 	}
@@ -19,12 +19,12 @@ public class TestBench {
 		System.out.println();
 
 		Inventory inventory = new Inventory();
-		zooAnimals.add(inventory);
+		libraryInventory.add(inventory);
 		TestBench.displayInfo(inventory);
 		
-		inventory.setAge(1);
-		inventory.setGender(InventoryStatus.CIRCULATING);
-		inventory.setWeight(5.5);
+		inventory.setLocation("Available");
+		inventory.setInventoryStatus(InventoryStatus.CIRCULATING);
+		inventory.setValue(5.5);
 		displayInfo(inventory);	
 		
 		System.out.println();
@@ -38,8 +38,8 @@ public class TestBench {
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 		
-		Inventory inventory = new Inventory(10, InventoryStatus.CIRCULATING, 100.0);
-		zooAnimals.add(inventory);
+		Inventory inventory = new Inventory("B-10", InventoryStatus.CIRCULATING, 100.0);
+		libraryInventory.add(inventory);
 		displayInfo(inventory);
 
 		System.out.println();
@@ -54,17 +54,13 @@ public class TestBench {
 		System.out.println();
 		
 		Movie movie = new Movie();
-		zooAnimals.add(movie);
+		libraryInventory.add(movie);
 		displayInfo(movie);
 		
-		movie.setAge(1);
-		movie.setGender(InventoryStatus.REFRENCE);
-		movie.setWeight(0.5);
+		movie.setLocation();
+		movie.setInventoryStatus(InventoryStatus.REFRENCE);
+		movie.setValue(0.5);
 		displayInfo(movie);
-		
-		movie.eat();
-		movie.sleep();
-//		movie.fly();
 		
 		System.out.println();
 		System.out.println("End of " + Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -78,7 +74,7 @@ public class TestBench {
 		System.out.println();
 		
 		Book book = new Book(2, InventoryStatus.REFRENCE, 10.5);
-		zooAnimals.add(book);
+		libraryInventory.add(book);
 		displayInfo(book);
 		
 		book.eat();
@@ -115,7 +111,7 @@ public class TestBench {
 		
 	private static void displayInfo(Inventory inventory) {
 		System.out.printf("ID: %-3d  Type: %-10s InventoryStatus: %-10s Age: %3d   Weight: %8.2f\n",
-				inventory.getId(), inventory.getType(), inventory.getGender(), inventory.getAge(), inventory.getWeight());
+				inventory.getId(), inventory.getType(), inventory.getInventoryStatus(), inventory.getLocation(), inventory.getValue());
 	} 
 
 	private static void displayReport() {
@@ -125,9 +121,9 @@ public class TestBench {
 		System.out.println("ID  Type       InventoryStatus     Age   Weight");
 		System.out.println("=== ========== ========== === ========");
 		
-		for (Inventory inventory : zooAnimals) {
+		for (Inventory inventory : libraryInventory) {
 			System.out.printf("%-3d %-10s %-10s %3d %8.2f\n",
-					inventory.getId(), inventory.getType(), inventory.getGender(), inventory.getAge(), inventory.getWeight());
+					inventory.getId(), inventory.getType(), inventory.getInventoryStatus(), inventory.getLocation(), inventory.getValue());
 		}
 		
 		System.out.println();

@@ -35,20 +35,20 @@ public class Inventory {
 	protected int id = 0;
 	
 	/**
-	 * The library inventory location.
-	 */
-	protected int location;
-	
-	/**
 	 * The inventory's inventoryStatus; enum InventoryStatus values are CIRCULATING,
 	 * REFRENCE, or RESERVE.
 	 */
 	protected InventoryStatus inventoryStatus;
 	
 	/**
-	 * The animal's weight in pounds.
+	 * The inventory location.
 	 */
-	protected double weight;
+	protected String location;
+	
+	/**
+	 * The inventory's value in dollars.
+	 */
+	protected double value;
 	
 	/**
 	 * Default constructor will automatically runs when an object is created
@@ -69,25 +69,25 @@ public class Inventory {
 		Inventory.counter++;
 		this.id = Inventory.counter;
 		
-		this.location = 0;
+		this.location = null;
 		this.inventoryStatus = null;
-		this.weight = 0.0;
+		this.value = 0.00;
 	}
 	
 	/**
 	 * Overload constructor that allows setting the object's default fields (attributes).
 	 * 
-	 * @param age Default age in years is 0.
+	 * @param location Default location is null.
 	 * @param inventoryStatus Default inventoryStatus is null.
-	 * @param weight Default weight in pounds is 0.0.
+	 * @param value Default value in pounds is 0.0.
 	 */
-	public Inventory(int age, InventoryStatus inventoryStatus, double weight){
+	public Inventory(String location, InventoryStatus inventoryStatus, double value){
 		
 		this();
 		
-		this.setAge(age);
-		this.setGender(inventoryStatus);
-		this.setWeight(weight);
+		this.setLocation(location);
+		this.setInventoryStatus(inventoryStatus);
+		this.setValue(value);
 	}
 	
 	/* 
@@ -100,100 +100,83 @@ public class Inventory {
 	 */
 
 	/**
-	 * Get the animal's ID. There is no setter because this can't be changed
+	 * Get the inventory's ID. There is no setter because this can't be changed
 	 * after it's been set by the constructor. 
 	 * 
-	 * @return The animal unique ID.
+	 * @return The inventory unique ID.
 	 */
 	public int getId() {
 		return this.id;
 	}
 	
-	/**
-	 * Set the animals age in years.
-	 * The animal age can not be negative, and if it is set it to zero.
-	 * 
-	 * @param location The animals age in years.
-	 */
-	public int getAge() {
-		return this.location;
-	}
-
-	/**
-	 * Get the animal's age in years.
-	 * 
-	 * @return The animal's age in years.
-	 */
-	public void setAge(int age) {
-		if (age >= 0)
-			this.location = age;
-		else
-			this.location = 0;
-	}
 	
 	/**
-	 * Get the animal's InventoryStatus.
+	 * Get the inventory's InventoryStatus.
 	 * 
-	 * @return The animal's InventoryStatus (enum CIRCULATING or REFRENCE).
+	 * @return The inventory's InventoryStatus (enum CIRCULATING, REFRENCE, or RESERVE).
 	 */
-	public InventoryStatus getGender() {
+	public InventoryStatus getInventoryStatus() {
 		return this.inventoryStatus;
 	}
 
 	/**
-	 * Set the animal's InventoryStatus.
+	 * Set the library's InventoryStatus.
 	 * 
-	 * @param inventoryStatus The animal's InventoryStatus (enum CIRCULATING or REFRENCE).
+	 * @param inventoryStatus The inventory's InventoryStatus (enum CIRCULATING, REFRENCE, or RESERVE).
 	 */
-	public void setGender(InventoryStatus inventoryStatus) {
+	public void setInventoryStatus(InventoryStatus inventoryStatus) {
 		this.inventoryStatus = inventoryStatus;
 	}
-
+	
 	/**
-	 * Get the animal's weight in pounds.
+	 * Set the inventory's location.
 	 * 
-	 * @return The animal's weight in pounds.
+	 * @param location The inventory's location.
 	 */
-	public double getWeight() {
-		return this.weight;
+	public String getLocation() {
+		return this.location;
 	}
 
 	/**
-	 * Set the animals weight in pounds.
-	 * The animal weight can not be negative, and if it is set it to zero.
+	 * Get the inventory's location.
 	 * 
-	 * @param weight The animal's weight in pounds.
+	 * @return The inventory's location.
 	 */
-	public void setWeight(double weight) {
-		if (weight >= 0)
-			this.weight = weight;
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	/**
+	 * Get the inventory's value in dollars.
+	 * 
+	 * @return The inventory's value in dollars.
+	 */
+	public double getValue() {
+		return this.value;
+	}
+
+	/**
+	 * Set the inventory's value in dollars.
+	 * The inventory's value can not be negative, and if it is set it to zero.
+	 * 
+	 * @param value The inventory's value in dollars.
+	 */
+	public void setValue(double value) {
+		if (value >= 0)
+			this.value = value;
 		else
-			this.weight = 0.0;
+			this.value = 0.00;
 	}
 
 	/**
-	 * Get the animal's type.  This is a final field that can't be
+	 * Get the inventory's type.  This is a final field that can't be
 	 * changed once set by the animal class or subclass.  There is
 	 * no setter since it can't be changed. 
 	 * 
-	 * @return The animal's type.
+	 * @return The inventory's type.
 	 */
 	public String getType() {
 		return this.type;
 	}
 
-	/**
-	 * All animals can eat (behavior). 
-	 */
- 	public void eat() {
-		System.out.println(this.type + " is eating....");
-	}
-	
- 	/**
- 	 * All animals can sleep (behavior).
- 	 */
-	public void sleep() {
-		System.out.println(this.type + " is sleeping...");
-	}
-	
 }

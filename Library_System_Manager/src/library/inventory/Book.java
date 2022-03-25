@@ -9,25 +9,27 @@ public class Book extends Inventory {
 	protected final String type = "Book";
 	
 	protected BookGenre bookType;
+	protected String author;
+	protected String title;
 	
 	// default constructor
 	public Book(){
-		/* Default age in years is 0.
+		/* Default location is null.
 		 * Default inventoryStatus is null.
-		 * Default weight in pounds is 0.0.
+		 * Default value in dollars is 0.00.
 		 */
-		this(0, null, 0.0); // age, inventoryStatus, weight
+		this(null, null, 0.0); // location, inventoryStatus, value
 	}
 	
 	/**
 	 * Overload constructor that allows setting the object's default fields (attributes).
 	 * 
-	 * @param age Default age in years is 0.
+	 * @param location Default location is null.
 	 * @param inventoryStatus Default inventoryStatus is null.
-	 * @param weight Default weight in pounds is 0.0.
+	 * @param value Default value in dollars is 0.00.
 	 */
-	public Book(int age, InventoryStatus inventoryStatus, double weight) {
-		super(age, inventoryStatus, weight);
+	public Book(String location, InventoryStatus inventoryStatus, double value) {
+		super(location, inventoryStatus, value);
 		this.bookType = null;
 	}
 	
@@ -59,13 +61,44 @@ public class Book extends Inventory {
 	 */
 	public void setBookType(BookGenre bookType) {
 		this.bookType = bookType;
-	}	
+	}
 
 	/**
-	 * All books are available (behavior).
+	 * Gets the book author's name
+	 * 
+	 * @return the author
 	 */
-	public void available() {
-		System.out.println(this.type + " is available...");
+	public String getAuthor() {
+		return author;
 	}
+
+	/**
+	 * Sets the book author's name
+	 * 
+	 * @param author the author of the book 
+	 */
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	/**
+	 * Gets the book title.
+	 * 
+	 * @return the title of the book 
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * Sets the book title. 
+	 * 
+	 * @param title the title of the book 
+	 */
+	public void setTitle(String title) {
+		this.title = title;
+	}	
+	
+	
 	
 }
