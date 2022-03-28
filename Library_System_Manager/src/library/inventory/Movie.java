@@ -1,12 +1,12 @@
 package library.inventory;
 
 /*  
- * The Book class is a subclass, deriving from it's parent/base class Inventory.
- * The Book extends the Inventory class. 
+ * The Movie class is a subclass, deriving from it's parent/base class Inventory.
+ * The Movie extends the Inventory class. 
 */
 public class Movie extends Inventory {
 
-	protected final String type = "Book";
+	protected final String type = "Movie";
 	
 	protected MovieGenre movieType;
 	protected String director;
@@ -35,7 +35,7 @@ public class Movie extends Inventory {
 	}
 	
 	/**
-	 * Get the Inventory's type.  This parent's class method has to be 
+	 * Get the movie's type.  This parent's class method has to be 
 	 * overridden in the subclass otherwise we would only see the parent's 
 	 * class type value of Inventory, and instead we want it to return Book.
 	 */
