@@ -98,7 +98,5 @@ public class Book extends Inventory {
 	public void setTitle(String title) {
 		this.title = title;
 	}	
-	
-	
-	
+
 }
