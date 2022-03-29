@@ -47,7 +47,7 @@ public class TestBench {
 		System.out.println();
 	}
 
-	private static void unitTest3_Movie_Default() {
+	private static void unitTest4_Movie_Default() {
 		
 		System.out.println();
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -57,8 +57,8 @@ public class TestBench {
 		libraryInventory.add(movie);
 		displayInfo(movie);
 		
-		movie.setLocation("C-15");
-		movie.setInventoryStatus(InventoryStatus.REFRENCE);
+		movie.setLocation("J-0");
+		movie.setInventoryStatus(InventoryStatus.RESERVE);
 		movie.setValue(4.50);
 		displayInfo(movie);
 		
@@ -66,14 +66,49 @@ public class TestBench {
 		System.out.println("End of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 	}
-
-	private static void unitTest4_Book_Overload() {
+	
+	private static void unitTest5_Movie_Overload() {
 		
 		System.out.println();
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 		
-		Book book = new Book("D-85", InventoryStatus.RESERVE, 10.50);
+		Movie movie = new Movie("E-90", InventoryStatus.RESERVE, 1.99);
+		libraryInventory.add(movie);
+		displayInfo(movie);
+		
+		System.out.println();
+		System.out.println("End of " + Thread.currentThread().getStackTrace()[1].getMethodName());
+		System.out.println();
+	}
+	
+	private static void unitTest6_Book_Default() {
+		
+		System.out.println();
+		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
+		System.out.println();
+		
+		Book book = new Book();
+		libraryInventory.add(book);
+		displayInfo(book);
+		
+		book.setLocation("R-1");
+		book.setInventoryStatus(InventoryStatus.CIRCULATING);
+		book.setValue(90.00);
+		displayInfo(book);
+		
+		System.out.println();
+		System.out.println("End of " + Thread.currentThread().getStackTrace()[1].getMethodName());
+		System.out.println();
+	}
+
+	private static void unitTest7_Book_Overload() {
+		
+		System.out.println();
+		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
+		System.out.println();
+		
+		Book book = new Book("D-85", InventoryStatus.REFRENCE, 10.50);
 		libraryInventory.add(book);
 		displayInfo(book);
 		
@@ -82,7 +117,7 @@ public class TestBench {
 		System.out.println();
 	}
 	
-	private static void unitTest5_Invalid_Data() {
+	private static void unitTest8_Invalid_Data() {
 		
 		System.out.println();
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -134,9 +169,11 @@ public class TestBench {
 		
 		TestBench.unitTest1_Inventory_Default();
 		TestBench.unitTest2_Inventory_Overload();
-		TestBench.unitTest3_Movie_Default();
-		TestBench.unitTest4_Book_Overload();
-		TestBench.unitTest5_Invalid_Data();
+		TestBench.unitTest4_Movie_Default();
+		TestBench.unitTest5_Movie_Overload();
+		TestBench.unitTest6_Book_Default();
+		TestBench.unitTest7_Book_Overload();
+		TestBench.unitTest8_Invalid_Data();
 		
 		TestBench.displayReport();
 		
