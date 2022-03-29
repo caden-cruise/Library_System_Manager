@@ -1,0 +1,69 @@
+
+Start of unitTest1_Inventory_Default
+
+ID: 1    Type: Inventory  Inventory Status: null               Location:       null   Value:     0.00
+ID: 1    Type: Inventory  Inventory Status: CIRCULATING        Location:       A-10   Value:     5.50
+
+End of unitTest1_Inventory_Default
+
+
+Start of unitTest2_Inventory_Overload
+
+ID: 2    Type: Inventory  Inventory Status: CIRCULATING        Location:       B-10   Value:     4.99
+
+End of unitTest2_Inventory_Overload
+
+
+Start of unitTest4_Movie_Default
+
+ID: 3    Type: Movie      Inventory Status: null               Location:       null   Value:     0.00
+ID: 3    Type: Movie      Inventory Status: RESERVE            Location:        J-0   Value:     4.50
+
+End of unitTest4_Movie_Default
+
+
+Start of unitTest5_Movie_Overload
+
+ID: 4    Type: Movie      Inventory Status: RESERVE            Location:       E-90   Value:     1.99
+
+End of unitTest5_Movie_Overload
+
+
+Start of unitTest6_Book_Default
+
+ID: 5    Type: Book       Inventory Status: null               Location:       null   Value:     0.00
+ID: 5    Type: Book       Inventory Status: CIRCULATING        Location:        R-1   Value:    90.00
+
+End of unitTest6_Book_Default
+
+
+Start of unitTest7_Book_Overload
+
+ID: 6    Type: Book       Inventory Status: REFRENCE           Location:       D-85   Value:    10.50
+
+End of unitTest7_Book_Overload
+
+
+Start of unitTest8_Invalid_Data
+
+ID: 7    Type: Movie      Inventory Status: REFRENCE           Location:              Value:     0.00
+This movie is a null movie.
+This movie's title is The Temple of Doom
+
+ID: 8    Type: Book       Inventory Status: CIRCULATING        Location:              Value:     0.00
+the book's title is Animal Farm
+This book is a NONFICTION book
+
+End of unitTest8_Invalid_Data
+
+
+================== Inventory REPORT ==================
+ID  Type       Inventory Status    Location   Value
+=== ========== ==================  ========== ========
+1   Inventory  CIRCULATING              A-10     5.50
+2   Inventory  CIRCULATING              B-10     4.99
+3   Movie      RESERVE                   J-0     4.50
+4   Movie      RESERVE                  E-90     1.99
+5   Book       CIRCULATING               R-1    90.00
+6   Book       REFRENCE                 D-85    10.50
+
